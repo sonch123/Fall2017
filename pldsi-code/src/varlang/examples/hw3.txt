@@ -1,0 +1,28 @@
+1.
+a)  (let ((y 4) (z 10)) (+ y z))
+
+b) (let ((x 2) (pi 3.14)) (* 4 pi x x))
+
+c)
+(let ((x 10) (y 12)) (let ((z (+ x y))) (-(+ x y)z)))
+
+
+2.
+ a. (let ((x 7)) (let ((y 3)) (let ((z 1)) (* x y z))))
+ b. (let ((x 7)) (let ((y 6)) (let ((z 2)) (/ (* x y) z))))
+ c.  (let ((x 7)) (let ((y 6)(b 1)) (let ((z 2)(a -1)) (+ (/ (* x y) z) a b ))))
+ d. (let ((x 3)(y 4)) (let ((z 3)) (let ((a 1)) (* (+ x y) z a))))
+ e. (let ((x 3)(y 4)) (let ((z 3)) (let ((a 21)(b 20)) (+ (/ (* (+ x y) z) a) b))))
+
+
+4. 
+ a) free -> none
+     bounded -> a 
+b)  free -> p, l
+     bounded -> c, s
+c)  free -> none
+     bounded -> g, x, y
+d)  free -> s, y
+     bounded -> x
+e) free -> none
+     bounded -> r, q

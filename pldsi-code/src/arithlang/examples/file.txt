@@ -1,0 +1,51 @@
+1-(a)
+
+(- (* 5 6) (+ 2 1) )
+program
+-> exp
+-> subexp
+-> (- mulexp exp)
+-> (- (* exp exp) exp)
+-> (- (* 5 exp) exp)
+-> (- (* 5 6) exp)
+-> (- (* 5 6) addexp)
+-> (- (* 5 6) (+ exp exp))
+-> (- (* 5 6) (+ 2 exp))
+-> (- (* 5 6) (+ 2 1))
+
+
+1-(b)
+ (* (/ 128 4) 2)
+ program
+-> exp
+-> mulexp
+-> (* exp exp)
+-> (* exp numexp)
+-> (* exp 2)
+-> (* divexp 2)
+-> (* (/ exp exp) 2)
+-> (* (/ exp 4) 2)
+-> (* (/ 128 4) 2)
+
+2-(a)
+AST.java - It is abstract syntax tree. This java file contains program and Exps such as add,sub,div and mul.
+Evaluator - Actual algorithm for the expressions.
+Interpreter - Main function for this arithlang. It contains all others like reader,evaluator,printer and AST counter.
+Printer - It contains format for all of the expressions.
+Reader - It is reader for use input. When user type input through the interpreter, reader makes it as program that can be used for evaluator.
+value - Interface for the values. It has NumVal class which contains double value as Value type.
+
+
+2-(b)
+
+ addexp returns [AddExp ast]
+        locals [ArrayList<Exp> list]
+ 		@init { $list = new ArrayList<Exp>(); } :
+ 		'(' '+'
+ 		    e=exp { $list.add($e.ast); } 
+ 		    ( e=exp { $list.add($e.ast); } )+
+ 		')' { $ast = new AddExp($list); }
+ 		;
+ 		
+ This grammar declare addexp return addexp type of list and it contains arraylist of expression initially.
+ The form of expression start with "(+ " and at least 2 or more expressions after that. Lasty, it closed with ")" 

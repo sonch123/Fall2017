@@ -1,0 +1,12 @@
+# OS Files #
+.DS_Store
+
+.metadata/
+.recommenders/
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.db
